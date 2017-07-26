@@ -1,3 +1,5 @@
+//Simple Game Engine
+
 #include "stdafx.h"
 #include "Engine.h"
 
