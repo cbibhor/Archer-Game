@@ -3,11 +3,9 @@
 
 player::player(float startX, float startY)
 {
-	// Associate a texture with the sprite
 	m_Texture.loadFromFile("Images/pirate.png");
-	m_Sprite.setTexture(m_Texture);		
+	m_Sprite.setTexture(m_Texture);	
 
-	// Initialise player variables
 	m_Speed = 400;
 	m_Angle=0.0f;
 	m_Velocity=10.0f;
@@ -18,22 +16,29 @@ player::player(float startX, float startY)
 
 	m_Position.x = startX;
 	m_Position.y = startY;
-	objectShape.setSize(sf::Vector2f(10,10));
-	objectShape.setPosition(m_Position);
+	m_Sprite.setPosition(m_Position);
+
+	lives = 3;
 }
 
-
-// Make the private sprite available to the draw() function
 Sprite player::getSprite(){
 	return m_Sprite;
 }
 
 FloatRect player::getPosition(){
-	return objectShape.getGlobalBounds();
+	return rectangleShape.getGlobalBounds();
 }
 
 RectangleShape player::getShape(){
-	return objectShape;
+	return rectangleShape;
+}
+
+void player::setLives(int newLives){
+	lives = newLives;
+}
+
+int player::getLives(){
+	return lives;
 }
 
 void player::moveLeft(){
@@ -68,9 +73,6 @@ void player::stopDown(){
 	m_DownPressed = false;
 }
 
-
-// Move player based on the input this frame, 
-// the time elapsed, and the speed
 void player::update(float elapsedTime){
 
 	if (m_RightPressed)
@@ -90,7 +92,6 @@ void player::update(float elapsedTime){
 		m_Position.y += m_Speed * elapsedTime;
 	}
 
-	// Now move the sprite to its new position
 	m_Sprite.setPosition(m_Position);	
 	
 }

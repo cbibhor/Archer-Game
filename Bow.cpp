@@ -4,6 +4,7 @@
 Bow::Bow(float pointX, float pointY){
 
 	m_Texture.loadFromFile("Images/bowStretched.png");
+	m_Texture.setSmooth(true);
 	m_Sprite.setTexture(m_Texture);
 	m_Sprite.setPosition(pointX,pointY);
 	//m_Sprite.setOrigin(50,50);

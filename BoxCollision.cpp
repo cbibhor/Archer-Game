@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "BoxCollision.h"
 
-BoxCollision::BoxCollision(float Top, float Bottom, float Right, float Left){
+BoxCollision::BoxCollision(float Left, float Right, float Top, float Bottom){
 
 	top = Top;
 	bottom = Bottom;

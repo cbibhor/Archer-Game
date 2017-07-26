@@ -9,39 +9,35 @@ Engine::Engine(){
 	windowHeight = 600;
 
 	m_Window.create(VideoMode(windowWidth, windowHeight),
-		"Simple Game Engine");
+		"Archer Game");
 		//Style::Fullscreen);
 
-	m_BackgroundTexture.loadFromFile("background.jpg");
+	m_BackgroundTexture.loadFromFile("Images/jungle.png");
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
 
-	m_Player = new player(-50,220);
-	m_Projectile = new Projectile(90,390);
-	m_Bow = new Bow(90,390);
-	m_RightHand = new RightHand(115,420);
-	m_LeftHand = new LeftHand(90,390);
-	m_Fruit = new Fruit(650, 300);
+	m_World = new World();
+	m_Player = new player(-50,280);
+	m_Enemy = new Enemy(550,0);
+	m_Arrow = new Arrow(90,450);
+	m_Bow = new Bow(90,450);
+	m_RightHand = new RightHand(115,480);
+	m_LeftHand = new LeftHand(90,450);
+	m_Score = new Score();
+	m_Sound = new SoundClass();
 
 	isCollision=false;
+	timeDelay=0;
 }
 
 void Engine::start()
 {	 
-	// We need to choose a font
     sf::Font font;
-    font.loadFromFile("28 Days Later.ttf");
- 
-    // Set the font to our message
+    font.loadFromFile("Fonts/Carten.otf");
     message.setFont(font);
- 
-    // Assign the actual message
     message.setString("Collided");
- 
-    // Make it really big
     message.setCharacterSize(20); 
- 
-    // Choose a color
 	message.setFillColor(sf::Color::Black);
+
 	Clock clock;
 
 	while (m_Window.isOpen())

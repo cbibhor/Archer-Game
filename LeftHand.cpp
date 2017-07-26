@@ -4,6 +4,7 @@
 LeftHand::LeftHand(float pointX, float pointY){
 
 	m_Texture.loadFromFile("Images/hand2.png");
+	m_Texture.setSmooth(true);
 	m_Sprite.setTexture(m_Texture);
 	m_Sprite.setPosition(pointX,pointY);
 	//m_Sprite.setOrigin(50,50);
