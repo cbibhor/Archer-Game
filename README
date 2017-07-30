@@ -1,0 +1,39 @@
+ARCHER GAME
+
+Archer is a 2D game of shooting arrows at target fruits. Aim and shoot arrow at fruit in one go.
+
+
+Development:
+
+The project was made with an objective to learn and demonstrate all major OOP concepts and to manage lengthy code with abstraction. It is developed using a simple game engine as blueprint which is built using SFML library. The complete project is written in C++ language. IDE used for developing the project was Visual Studio 2012.
+
+
+Installation:
+
+On windows, download 'Archer Game for Windows Zip.zip', extract and open .exe file. Required DLLs are provided in the zip.
+
+
+Project Highlights:
+
+1. Used Textures with Sprites.
+2. All major classes inherited from the Entity class.
+3. Trajectory class contains algorithm for path of parabolic projectile.
+4. Used Box based collision detection algorithm.
+5. Functions for different vertical movements of target.
+6. Increasses level of difficulty after each level.
+7. Randomly selects a fruit at each level using Random Generator class.
+8. Sound class contains looping background music and play cheering sound when target is hit.
+9. Store and read high score from file.
+
+
+Controls:
+
+Enter key: start game
+Spacebar Press: increase angle
+Spacebar Release: shoot arrow
+Esc key: quit game
+
+
+Developer:
+
+Bibhor Chauhan (cbibhor@gmail.com)
